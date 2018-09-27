@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>demo</groupId>
+    <artifactId>spring-cloud</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 子模块 -->
+    <modules>
+        <module>core</module>
+    </modules>
+
+    <!-- 变量及版本定义 -->
+    <properties>
+        <!-- java库版本 -->
+        <java.version>1.8</java.version>
+
+        <!-- 软件编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- 编译插件版本 -->
+        <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+        <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+        <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
+
+        <!-- spring-boot版本 -->
+        <spring-boot.version>1.5.6.RELEASE</spring-boot.version>
+
+        <!-- 缓存 -->
+        <redisson.version>3.4.4</redisson.version>
+
+        <!-- 快速反射，用于BeanUtils -->
+        <kryo.version>2.24.0</kryo.version>
+
+        <!-- HTTP访问 -->
+        <okhttp.version>3.8.1</okhttp.version>
+
+        <!-- 读写Office文档 -->
+        <poi.version>3.16</poi.version>
+
+    </properties>
+
+    <!-- 子模块按需引用依赖库 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- 读写Office文档 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml-schemas</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-examples</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-scratchpad</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-excelant</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 通用编译方法 -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven-assembly-plugin.version}</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <!-- 软件库下载地址 -->
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>maven-public</name>
+            <url>http://192.168.1.253:8081/repository/maven-public</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/jcenter-cache</url>
+        </repository>
+    </repositories>
+
+    <!-- 插件库下载地址 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>maven-public</name>
+            <url>http://192.168.1.253:8081/repository/maven-public</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/jcenter-cache</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>
