@@ -14,15 +14,7 @@
 
     <!-- 本模块使用到的依赖库 -->
     <dependencies>
-        <!-- 公用依赖库 -->
-        <!-- 测试 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>${spring-boot.version}</version>
-            <scope>test</scope>
-        </dependency>
-
+        <!-- 独立依赖库 -->
         <!-- 缓存 -->
         <dependency>
             <groupId>org.redisson</groupId>
@@ -44,39 +36,13 @@
             <version>${okhttp.version}</version>
         </dependency>
 
-        <!-- 按需引用依赖库 -->
-        <!-- 读写Office文档 -->
+        <!-- 与父模块共用的依赖库 -->
+        <!-- 测试 -->
         <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml-schemas</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-examples</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-scratchpad</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-excelant</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
     </dependencies>
 
 </project>
