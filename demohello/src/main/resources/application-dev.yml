@@ -4,7 +4,7 @@
 #
 # ===================================================================
 server:
-   port: 8080
+   port: ${randomServerPort.value[10000,19999]}
 
 # ===================================================================
 # web应用信息查看
@@ -12,3 +12,14 @@ server:
 management:
   security:
     enabled: false
+
+# ===================================================================
+# 服务注册中心
+# ===================================================================
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    instanceId: ${eureka.instance.appname}-${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka

@@ -15,6 +15,7 @@
     <modules>
         <module>core</module>
         <module>demohello</module>
+        <module>democenter</module>
     </modules>
 
     <!-- 变量及版本定义 -->
@@ -29,6 +30,12 @@
         <spring-boot.version>1.5.6.RELEASE</spring-boot.version>
         <spring-cloud.version>Dalston.RC1</spring-cloud.version>
         <spring-boot-maven-plugin.version>1.5.16.RELEASE</spring-boot-maven-plugin.version>
+
+        <!-- 通用子模块版本 -->
+        <core.version>1.0-SNAPSHOT</core.version>
+
+        <!-- 数字处理 -->
+        <commons-lang3.version>3.6</commons-lang3.version>
 
         <!-- 缓存 -->
         <redisson.version>3.4.4</redisson.version>

@@ -2,5 +2,7 @@
 # 激活配置（可选dev、prod、test)
 # ===================================================================
 spring:
-   profiles:
-       active: dev
+  profiles:
+    active: dev
+  application:
+    name: hello-service
