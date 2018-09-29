@@ -17,6 +17,7 @@
         <module>demohello</module>
         <module>democenter</module>
         <module>democaller</module>
+        <module>demofeigncaller</module>
     </modules>
 
     <!-- 变量及版本定义 -->
