@@ -1,8 +1,8 @@
 # ===================================================================
-# 激活配置（可选a、b)
+# 激活配置（可选dev、prod、test)
 # ===================================================================
 spring:
   profiles:
-    active: a
+    active: dev
   application:
-    name: cloud-center
+    name: caller

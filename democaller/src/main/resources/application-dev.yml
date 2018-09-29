@@ -17,9 +17,6 @@ management:
 # 服务注册中心
 # ===================================================================
 eureka:
-  instance:
-    appname: ${spring.application.name}
-    instanceId: ${eureka.instance.appname}-${spring.cloud.client.ipAddress}:${server.port}
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka,http://localhost:1112/eureka

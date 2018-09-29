@@ -16,6 +16,7 @@
         <module>core</module>
         <module>demohello</module>
         <module>democenter</module>
+        <module>democaller</module>
     </modules>
 
     <!-- 变量及版本定义 -->
@@ -97,6 +98,13 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- 通用子模块 -->
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>core</artifactId>
+                <version>${core.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
