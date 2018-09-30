@@ -18,6 +18,7 @@
         <module>democenter</module>
         <module>democaller</module>
         <module>demofeigncaller</module>
+        <module>demoshiro</module>
     </modules>
 
     <!-- 变量及版本定义 -->
@@ -50,6 +51,9 @@
 
         <!-- 读写Office文档 -->
         <poi.version>3.16</poi.version>
+
+        <!-- 权限校验 -->
+        <shiro.version>1.2.4</shiro.version>
 
     </properties>
 
