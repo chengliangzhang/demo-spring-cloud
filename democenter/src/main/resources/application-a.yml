@@ -9,6 +9,10 @@ eureka:
     hostname: localhost
     appname: ${spring.application.name}
     instanceId: ${eureka.instance.appname}-${spring.cloud.client.ipAddress}:${server.port}
+    lease-renewal-interval-in-seconds: 3
+    lease-expiration-duration-in-seconds: 9
+  server:
+    enable-self-preservation: false
   client:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:1112/eureka
